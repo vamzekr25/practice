@@ -2,8 +2,9 @@ pipeline {
 	agent any
 	stages {
 		stage ('github'){
-			steps{
-				echo'source code fetching'
+		    steps{
+			echo'source code fetching'
+			checkout([$class: 'GitSCM', branches: [[name: '**']], extensions: [], userRemoteConfigs: [[credentialsId: 'c2e0bc36-e1f2-41a4-ac27-64bd420cce4d', url: 'https://github.com/vamzekr25/practice-repo.git']]])
 				}
 			}
 		stage ('ant build') {
