@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent master
     
     stages {
         stage ('source code') {
@@ -11,6 +11,7 @@ pipeline {
         stage ('build') {
             steps {
                 echo 'ant build'
+                clean compile test package war
                 
             }
         }
