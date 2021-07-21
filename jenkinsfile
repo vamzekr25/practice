@@ -1,0 +1,15 @@
+pipeline {
+	agent any
+	stages {
+		stage ('github'){
+			steps{
+				echo'source code fetching'
+				}
+			}
+		stage ('ant build') {
+			steps{
+				echo'building'
+				}
+			}
+		}
+	} 
